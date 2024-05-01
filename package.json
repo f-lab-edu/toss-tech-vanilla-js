@@ -1,0 +1,10 @@
+{
+  "name": "@sossost/toss-tech",
+  "version": "1.0.0",
+  "description": "프레임워크 없이 바닐라 자바스크립트로 만드는 토스테크 페이지",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node serve.js"
+  },
+  "license": "MIT"
+}
