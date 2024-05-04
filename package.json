@@ -4,13 +4,17 @@
   "description": "프레임워크 없이 바닐라 자바스크립트로 만드는 토스테크 페이지",
   "main": "index.js",
   "scripts": {
-    "dev": "npx http-server ./src -c-1 -p 8001 -a localhost"
+    "dev": "npx http-server ./src -c-1 -p 8001 -a localhost",
+    "test": "jest"
   },
   "license": "MIT",
   "dependencies": {
     "http-server": "^14.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
   }
 }
