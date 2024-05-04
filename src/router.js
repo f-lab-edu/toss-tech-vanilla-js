@@ -2,7 +2,7 @@ const ROUTE_PARAMETER_REGEXP = /:(\w+)/g;
 const URL_FRAGMENT_REGEXP = "([^\\/]+)";
 const TICKTIME = 250;
 
-const extractUrlParams = (route, pathname) => {
+export const extractUrlParams = (route, pathname) => {
   const params = {};
 
   if (route.params.length === 0) {
