@@ -7,7 +7,7 @@ const router = createRouter();
 
 router
   .addRoute("/", pages.main)
-  .addRoute("/article/:id", pages.artcle)
+  .addRoute("/article/:id", pages.article)
   .setNotFound(pages.notFound)
   .start();
 
