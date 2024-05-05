@@ -3,7 +3,7 @@ import createRouter from "../router.js";
 
 const router = createRouter();
 
-export class Component extends HTMLElement {
+export default class Component extends HTMLElement {
   constructor(attributes) {
     super();
     this.props = {};
