@@ -1,5 +1,5 @@
 #header {
-  position: fixed;
+  position: sticky;
   top: 0;
   display: flex;
   width: 100%;
@@ -7,6 +7,7 @@
   align-items: center;
   border-bottom: 1px solid rgba(0, 27, 55, 0.1);
   height: 60px;
+  background-color: white;
 }
 
 .header_container {
@@ -16,6 +17,7 @@
   width: 100%;
   max-width: 1140px;
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .logo {
