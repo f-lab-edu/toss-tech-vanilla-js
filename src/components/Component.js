@@ -3,7 +3,7 @@ import createRouter from "../router.js";
 
 const router = createRouter();
 
-export class Component extends HTMLElement {
+export default class Component extends HTMLElement {
   constructor(attributes) {
     super();
     this.props = {};
@@ -15,20 +15,14 @@ export class Component extends HTMLElement {
     this.shadowRoot.addEventListener(
       "click",
       (e) => {
-        let { target } = e;
-
-        if (target.matches("img")) {
-          target = target.parentElement;
-        }
-
-        if (target.matches(NAV_BTN_SELECTOR)) {
+        const target = e.target.closest("a[data-navigate]");
+        if (target) {
           e.preventDefault();
-          console.log(target.dataset);
           const { navigate } = target.dataset;
           router.navigate(navigate);
         }
       },
-      false
+      true
     );
   }
 

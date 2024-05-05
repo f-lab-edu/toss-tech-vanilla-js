@@ -1,4 +1,5 @@
-import { Component } from "../Component.js";
+import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
+import Component from "../Component.js";
 
 export default class Footer extends Component {
   constructor() {
@@ -92,3 +93,5 @@ export default class Footer extends Component {
     `;
   }
 }
+
+window.customElements.define(CUSMTOM_ELEMENTS_NAME.APP_FOOTER, Footer);
