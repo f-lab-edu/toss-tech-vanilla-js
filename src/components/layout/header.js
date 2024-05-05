@@ -1,4 +1,4 @@
-import { Component } from "../Component.js";
+import Component from "../Component.js";
 
 export default class Header extends Component {
   constructor() {
@@ -18,6 +18,7 @@ export default class Header extends Component {
           border-bottom: 1px solid rgba(0, 27, 55, 0.1);
           height: 60px;
           background-color: white;
+          z-index:100;
         }
         
         .header_container {
@@ -72,3 +73,5 @@ export default class Header extends Component {
     `;
   }
 }
+
+window.customElements.define("main-header", Header);

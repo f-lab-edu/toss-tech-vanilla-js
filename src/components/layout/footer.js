@@ -1,4 +1,4 @@
-import { Component } from "../Component.js";
+import Component from "../Component.js";
 
 export default class Footer extends Component {
   constructor() {
@@ -92,3 +92,5 @@ export default class Footer extends Component {
     `;
   }
 }
+
+window.customElements.define("main-footer", Footer);
