@@ -12,4 +12,7 @@ main {
   width: 100%;
   min-height: 100vh;
   font-size: 15px;
+  max-width: 980px;
+  margin-bottom: 192px;
+  margin: 0 auto;
 }
