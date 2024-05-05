@@ -15,19 +15,14 @@ export default class Component extends HTMLElement {
     this.shadowRoot.addEventListener(
       "click",
       (e) => {
-        let { target } = e;
-
-        if (target.matches("img")) {
-          target = target.parentElement;
-        }
-
-        if (target.matches(NAV_BTN_SELECTOR)) {
+        const target = e.target.closest("a[data-navigate]");
+        if (target) {
           e.preventDefault();
           const { navigate } = target.dataset;
           router.navigate(navigate);
         }
       },
-      false
+      true
     );
   }
 
