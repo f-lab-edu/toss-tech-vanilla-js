@@ -61,7 +61,7 @@ export default class Header extends Component {
     return `
       <header id="header">
           <div class="header_container">
-              <a href="/" data-navigate="/">
+              <a href="/tech" data-navigate="/">
                   <img src="https://camo.githubusercontent.com/3172b26e07f1edaa6f9683644f56ab6672632ac80d77157b157cf97f02b49456/68747470733a2f2f692e696d6775722e636f6d2f63647a727772742e706e67" alt="logo" class="logo" />
               </a>
               <nav>
