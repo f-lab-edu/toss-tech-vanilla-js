@@ -15,7 +15,7 @@ export default class Component extends HTMLElement {
     this.shadowRoot.addEventListener(
       "click",
       (e) => {
-        const target = e.target.closest("a[data-navigate]");
+        const target = e.target.closest(NAV_BTN_SELECTOR);
         if (target) {
           e.preventDefault();
           const { navigate } = target.dataset;
