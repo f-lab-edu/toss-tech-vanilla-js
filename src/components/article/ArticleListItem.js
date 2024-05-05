@@ -1,3 +1,4 @@
+import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
 
 export default class ArticleListItem extends Component {
@@ -97,4 +98,7 @@ export default class ArticleListItem extends Component {
   }
 }
 
-window.customElements.define("article-list-item", ArticleListItem);
+window.customElements.define(
+  CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM,
+  ArticleListItem
+);

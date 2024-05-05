@@ -1,4 +1,5 @@
 import { getArticleListByCategory } from "../../apis/getArticleList.js";
+import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
 
 class ArticleList extends Component {
@@ -60,6 +61,6 @@ class ArticleList extends Component {
   }
 }
 
-window.customElements.define("article-list", ArticleList);
+window.customElements.define(CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST, ArticleList);
 
 export default ArticleList;

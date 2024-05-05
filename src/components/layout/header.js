@@ -1,3 +1,4 @@
+import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
 
 export default class Header extends Component {
@@ -74,4 +75,4 @@ export default class Header extends Component {
   }
 }
 
-window.customElements.define("main-header", Header);
+window.customElements.define(CUSMTOM_ELEMENTS_NAME.APP_HEADER, Header);

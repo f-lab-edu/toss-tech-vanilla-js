@@ -1,3 +1,4 @@
+import { CUSMTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
 import Component from "../components/Component.js";
 
 class MainPage extends Component {
@@ -24,12 +25,12 @@ class MainPage extends Component {
   createHTML() {
     return `
       <div class='main-page__container'>
-        <article-list category='tech'></article-list>
+        <${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST} category='tech'></${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST}>
       </div>
     `;
   }
 }
 
-window.customElements.define("main-page", MainPage);
+window.customElements.define(CUSMTOM_ELEMENTS_NAME.MAIN_PAGE, MainPage);
 
 export default MainPage;
