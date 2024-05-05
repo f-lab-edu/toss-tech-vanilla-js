@@ -1,4 +1,4 @@
-const NAV_BTN_SELECTOR = "a[data-navigate]";
+const NAV_AHCHOR_SELECTOR = "a[data-navigate]";
 import createRouter from "../router.js";
 
 const router = createRouter();
@@ -15,7 +15,7 @@ export default class Component extends HTMLElement {
     this.shadowRoot.addEventListener(
       "click",
       (e) => {
-        const target = e.target.closest("a[data-navigate]");
+        const target = e.target.closest(NAV_AHCHOR_SELECTOR);
         if (target) {
           e.preventDefault();
           const { navigate } = target.dataset;

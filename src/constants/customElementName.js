@@ -1,6 +1,7 @@
 export const CUSMTOM_ELEMENTS_NAME = {
   MAIN_PAGE: "main-page",
   ARTICLE_DETAIL_PAGE: "article-detail-page",
+  NOT_FOUND_PAGE: "not-found-page",
 
   APP_HEADER: "app-header",
   APP_FOOTER: "app-footer",
