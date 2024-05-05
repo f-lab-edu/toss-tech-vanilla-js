@@ -80,6 +80,7 @@ export default () => {
   };
 
   router.start = () => {
+    window.addEventListener("popstate", checkRoutes);
     checkRoutes();
     window.setInterval(checkRoutes, TICKTIME);
   };
