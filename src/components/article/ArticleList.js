@@ -2,13 +2,20 @@ import { getArticleListByCategory } from "../../apis/getArticleList.js";
 import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
 
+const CATEGORY = {
+  "/tech": "개발",
+  "/design": "디자인",
+};
+
 class ArticleList extends Component {
   constructor() {
     super(["category"]);
+    this.caregory = "";
   }
 
   async connectedCallback() {
     const category = this.getAttribute("category");
+    this.category = category;
     const articleList = await getArticleListByCategory(category);
     this.props = articleList;
     this.render();
@@ -40,7 +47,7 @@ class ArticleList extends Component {
   createHTML(articleList) {
     return `
       <section>
-        <h3 class='article-list__title'>개발</h3>
+        <h3 class='article-list__title'>${CATEGORY[this.category]}</h3>
         <ul class='article-list__container'>
             ${articleList
               ?.map((article) => {
