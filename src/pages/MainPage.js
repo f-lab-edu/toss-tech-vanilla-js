@@ -6,10 +6,6 @@ class MainPage extends Component {
     super([]);
   }
 
-  async connectedCallback() {
-    this.render();
-  }
-
   get styles() {
     return `
       <style>
@@ -23,9 +19,11 @@ class MainPage extends Component {
   }
 
   createHTML() {
+    const currentPath = window.location.pathname;
+
     return `
       <div class='main-page__container'>
-        <${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST} category='tech'></${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST}>
+        <${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST} category="${currentPath}"></${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST}>
       </div>
     `;
   }
