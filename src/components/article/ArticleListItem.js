@@ -19,7 +19,10 @@ export default class ArticleListItem extends Component {
         }
         .article__thumbnail {
           width: 240px;
+          min-width: 240px;
           height: 240px;
+          min-height: 240px;
+          background-color: #f5f5f5;
           object-fit: cover;
           border-radius: 14px;
           margin-right: 48px;
