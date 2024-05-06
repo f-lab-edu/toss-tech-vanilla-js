@@ -6,6 +6,11 @@ export default class Header extends Component {
     super([]);
   }
 
+  connectedCallback() {
+    this.render();
+    this.addCareerButtonEvent();
+  }
+
   get styles() {
     return `
       <style>
@@ -36,7 +41,11 @@ export default class Header extends Component {
           width: 110px;
           height: 20px;
         }
-        
+        .nav_list {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
         .nav_item {
           padding: 12px 10px;
           font-size: 15px;
@@ -49,13 +58,36 @@ export default class Header extends Component {
           text-decoration: none;
           text-align: left;
         }
-        
         .nav_item:hover {
           background-color: rgba(0, 27, 55, 0.05);
+        }
+        .nav_list button {
+            margin: 0;
+            padding : 7px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            color: #f9fafb;
+            background-color: #3182f6;
+            border: 0 solid transparent;
+            transition: background .2s ease, color .1s ease;
+            border-radius: 6px;
+            cursor: pointer;
+            height: 32px;
+        }
+        .nav_list button:hover {
+            background-color: #0f65e5;
         }
       </style>
     `;
   }
+
+  addCareerButtonEvent = () => {
+    const button = this.shadowRoot.querySelector("button");
+    button.addEventListener("click", () => {
+      window.location.href = "https://toss.im/career/jobs";
+    });
+  };
 
   createHTML() {
     return `
@@ -66,7 +98,9 @@ export default class Header extends Component {
               </a>
               <nav>
                 <div class="nav_list">
+                <a href="/design" data-navigate="/design" class="nav_item">디자인</a>
                    <a href="/tech" data-navigate="/tech" class="nav_item">개발</a>
+                   <button>채용 바로가기</button>
                 </div>
               </nav>
           </div>
