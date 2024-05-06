@@ -1,0 +1,32 @@
+{
+  "articles": [
+    {
+      "id": "toss-design-system-guide",
+      "thumbnail": "https://static.toss.im/illusts/240403-thumbnail.png",
+      "title": "제품이 커지면 디자인 시스템 가이드는 어떻게 개선돼야 할까?",
+      "description": "디자인 시스템을 운영하면서, 컴포넌트의 유려함뿐만 아니라 가이드의 효율적인 제작도 중요하다는 것을 깨달았어요. 이번 아티클에서는 TDS 컴포넌트 가이드를 제작 할 때 어떤 부분들을 고려해서 만들어가고 있는지 소개해드릴게요.",
+      "date": "2024. 4. 5"
+    },
+    {
+      "id": "uxresearch-method",
+      "thumbnail": "https://static.toss.im/illusts/research_method_image.png",
+      "title": "토스 UX 리서처는 어떤 방법론을 사용할까?",
+      "description": "토스팀에서 맥락도 도메인도 너무나 다양한 문제들을 마주하는 UX 리서치팀은 어떤 리서치 방법론을 사용하는지 소개해요.",
+      "date": "2024. 3. 13"
+    },
+    {
+      "id": "toss-design-system",
+      "thumbnail": "https://static.toss.im/assets/toss-tech/soohyeon-%E1%84%90%E1%85%A6%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3-%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png",
+      "title": "토스 디자이너가 제품에만 집중할 수 있는 방법",
+      "description": "디자인 시스템은 제품의 어느 단계까지 기여할 수 있을까요? 더 이상 다른 것에는 신경쓰지 않아도 되는 Menu 컴포넌트를 만들었던 3가지 방법을 소개할게요.",
+      "date": "2024. 3. 5"
+    },
+    {
+      "id": "design-motivation",
+      "thumbnail": "https://static.toss.im/lotties/20240216-blog-%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png",
+      "title": "모티베이션을 디자인하기",
+      "description": "UX Writing Team이 ‘스스로 참여하고 싶은 프로그램 만들기’라는 모호한 문제에 접근한 방법을 소개해 드릴게요.",
+      "date": "2024. 2. 26"
+    }
+  ]
+}
