@@ -3,8 +3,8 @@ import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
 
 const CATEGORY = {
-  "/tech": "개발",
-  "/design": "디자인",
+  tech: "개발",
+  design: "디자인",
 };
 
 class ArticleList extends Component {

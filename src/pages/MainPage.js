@@ -19,7 +19,7 @@ class MainPage extends Component {
   }
 
   createHTML() {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.slice(1) || "tech";
 
     return `
       <div class='main-page__container'>
