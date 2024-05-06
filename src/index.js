@@ -9,6 +9,7 @@ const router = createRouter();
 router
   .addRoute("/", pages.main)
   .addRoute("/tech", pages.main)
+  .addRoute("/design", pages.main)
   .addRoute("/article/:articleId", pages.article)
   .setNotFound(pages.notFound)
   .start();
