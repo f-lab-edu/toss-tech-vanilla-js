@@ -1,15 +1,22 @@
+import { Params, Route, Router } from "./types";
+
 const ROUTE_PARAMETER_REGEXP = /:(\w+)/g;
 const URL_FRAGMENT_REGEXP = "([^\\/]+)";
 const TICKTIME = 250;
 
-const routes = [];
+const routes: Route[] = [];
 let notFound = () => {};
-let lastPathname;
+let lastPathname: string;
 
-const router = {};
+const router: Router = {
+  addRoute: () => router,
+  setNotFound: () => router,
+  navigate: () => {},
+  start: () => {},
+};
 
-const extractUrlParams = (route, pathname) => {
-  const params = {};
+const extractUrlParams = (route: Route, pathname: string) => {
+  const params: Params = {};
 
   if (route.params.length === 0) {
     return params;
@@ -17,9 +24,9 @@ const extractUrlParams = (route, pathname) => {
 
   const matches = pathname.match(route.testRegExp);
 
-  matches.shift();
+  matches?.shift();
 
-  matches.forEach((paramValue, index) => {
+  matches?.forEach((paramValue, index) => {
     const paramName = route.params[index];
     params[paramName] = paramValue;
   });
@@ -51,7 +58,7 @@ const checkRoutes = () => {
 };
 
 router.addRoute = (path, callback) => {
-  const params = [];
+  const params: string[] = [];
 
   const parsedPath = path
     .replace(ROUTE_PARAMETER_REGEXP, (_, paramName) => {
@@ -69,13 +76,13 @@ router.addRoute = (path, callback) => {
   return router;
 };
 
-router.setNotFound = (cb) => {
+router.setNotFound = (cb: () => void) => {
   notFound = cb;
   return router;
 };
 
-router.navigate = (path) => {
-  window.history.pushState(null, null, path);
+router.navigate = (path: string) => {
+  window.history.pushState(null, "", path);
 };
 
 router.start = () => {
