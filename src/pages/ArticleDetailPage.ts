@@ -1,4 +1,4 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
+import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
 import Component from "../components/Component.js";
 import { getArticleById } from "../apis/getArticle.js";
 
@@ -34,7 +34,7 @@ class ArticleDetailPage extends Component {
     return `
       <div class='article-detail-page__container'>
         <div class="article-detail__container">
-            <${CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL}
+            <${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL}
                 thumbnail="${article.thumbnail}"
                 title="${article.title}"
                 profileImage="${article.profile_image}"
@@ -42,7 +42,7 @@ class ArticleDetailPage extends Component {
                 position="${article.position}"
                 date="${article.date}"
                 content="${article.content}"
-            </${CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL}>
+            </${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL}>
         </div>
       </div>
     `;
@@ -50,7 +50,7 @@ class ArticleDetailPage extends Component {
 }
 
 window.customElements.define(
-  CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE,
+  CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE,
   ArticleDetailPage
 );
 
