@@ -1,5 +1,15 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
 import Component from "../Component.js";
+
+type Props = {
+  thumbnail: string;
+  title: string;
+  profileImage: string;
+  author: string;
+  position: string;
+  date: string;
+  content: string;
+};
 
 class ArticleDetail extends Component {
   constructor() {
@@ -66,22 +76,22 @@ class ArticleDetail extends Component {
     position,
     date,
     content,
-  }) {
+  }: Props) {
     return `
     <div>
         <header class='article-header__container'>
             <img
                 class='article-header__thumbnail'
                 srcset='${thumbnail}'
-                alt='${title}_thumbnual'
+                alt='${title}_thumbnail'
             />
             <h2 class='article-header__title'>${title}</h2>
-            <${CUSMTOM_ELEMENTS_NAME.ARTICLE_PROFILE}
+            <${CUSTOM_ELEMENTS_NAME.ARTICLE_PROFILE}
                 profileImage='${profileImage}'
                 name='${author}'
                 position='${position}'
                 date='${date}'
-            ></${CUSMTOM_ELEMENTS_NAME.ARTICLE_PROFILE}>
+            ></${CUSTOM_ELEMENTS_NAME.ARTICLE_PROFILE}>
         </header>
         <div class="article-body__container">
             ${content}
@@ -91,6 +101,6 @@ class ArticleDetail extends Component {
   }
 }
 
-customElements.define(CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL, ArticleDetail);
+customElements.define(CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL, ArticleDetail);
 
 export default ArticleDetail;
