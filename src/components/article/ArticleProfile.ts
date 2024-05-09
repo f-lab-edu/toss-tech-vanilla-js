@@ -1,5 +1,12 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
+
+type ArticleProfileProps = {
+  profileImage: string;
+  name: string;
+  position: string;
+  date: string;
+};
 
 class ArticleProfile extends Component {
   constructor() {
@@ -41,7 +48,7 @@ class ArticleProfile extends Component {
     `;
   }
 
-  createHTML({ profileImage, name, position, date }) {
+  createHTML({ profileImage, name, position, date }: ArticleProfileProps) {
     return `
       <div class='article-author-profile'>
         <img
@@ -62,7 +69,7 @@ class ArticleProfile extends Component {
 }
 
 window.customElements.define(
-  CUSMTOM_ELEMENTS_NAME.ARTICLE_PROFILE,
+  CUSTOM_ELEMENTS_NAME.ARTICLE_PROFILE,
   ArticleProfile
 );
 
