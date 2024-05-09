@@ -1,6 +1,8 @@
+import { Category } from "../types";
+
 const BASE_URL = window.location.origin;
 
-export const getArticleListByCategory = async (category) => {
+export const getArticleListByCategory = async (category: Category) => {
   try {
     const response = await fetch(
       `${BASE_URL}/data/${category}ArticleList.json`,
