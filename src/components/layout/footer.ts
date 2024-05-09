@@ -1,4 +1,4 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
 import Component from "../Component.js";
 
 export default class Footer extends Component {
@@ -44,14 +44,14 @@ export default class Footer extends Component {
           font-weight: 700;
         }
         
-        .footer_adrress {
+        .footer_address {
           color: #8b95a1;
           font-size: 13px;
           font-style: normal;
           line-height: 20px;
         }
         
-        .footer_adrress_company_name {
+        .footer_address_company_name {
           display: block;
           padding-bottom: 16px;
           color: #333d4b;
@@ -84,14 +84,14 @@ export default class Footer extends Component {
                     <li>카카오톡: @toss</li>
                 </ul>
             </div>
-            <adress class="footer_adrress">
-                <strong class="footer_adrress_company_name">㈜비바리퍼블리카</strong>
+            <address class="footer_address">
+                <strong class="footer_address_company_name">㈜비바리퍼블리카</strong>
                 Copyright © Viva Republica, Inc. All Rights Reserved.
-            </adress>
+            </address>
         </div>
     </footer>
     `;
   }
 }
 
-window.customElements.define(CUSMTOM_ELEMENTS_NAME.APP_FOOTER, Footer);
+window.customElements.define(CUSTOM_ELEMENTS_NAME.APP_FOOTER, Footer);
