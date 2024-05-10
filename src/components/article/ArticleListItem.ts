@@ -1,5 +1,5 @@
-import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
-import Component from "../Component.js";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
+import Component from "../Component";
 
 type ArticleListItemProps = {
   id: string;

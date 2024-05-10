@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
-import Component from "../Component.js";
+import Component from "../Component";
 
 type Props = {
   thumbnail: string;

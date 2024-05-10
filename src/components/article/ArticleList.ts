@@ -1,7 +1,7 @@
-import { getArticleListByCategory } from "../../apis/getArticleList.js";
+import { getArticleListByCategory } from "../../apis/getArticleList";
 import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
 import { Article, Category } from "../../types";
-import Component from "../Component.js";
+import Component from "../Component";
 
 const CATEGORY = {
   tech: "개발",
@@ -55,13 +55,13 @@ class ArticleList extends Component {
             ${articleList
               ?.map((article) => {
                 return `
-                    <article-list-item
+                    <${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM}
                         id='${article.id}'
                         thumbnail='${article.thumbnail}'
                         title='${article.title}'
                         description='${article.description}'
                         date='${article.date}'
-                    ></article-list-item>
+                    ></${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM}>
                     `;
               })
               .join("")}       
