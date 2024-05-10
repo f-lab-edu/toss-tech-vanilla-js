@@ -1,6 +1,5 @@
+import { BASE_URL } from ".";
 import { Category } from "../types";
-
-const BASE_URL = window.location.origin;
 
 export const getArticleListByCategory = async (category: Category) => {
   try {
