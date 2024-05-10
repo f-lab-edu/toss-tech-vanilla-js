@@ -3,9 +3,7 @@ import createRouter from "../router";
 
 const router = createRouter();
 
-type Props = {
-  [key: string]: any;
-};
+type Props = any;
 
 export default class Component extends HTMLElement {
   public props: Props;
