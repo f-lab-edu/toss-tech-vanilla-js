@@ -1,6 +1,6 @@
-import "./components/entry.js";
-import createRouter from "./router.js";
-import createPages from "./pages/index.js";
+import "./components/entry";
+import createRouter from "./router";
+import createPages from "./pages";
 
 const container = document.querySelector("main");
 const pages = createPages(container);
