@@ -1,6 +1,9 @@
 import { BASE_URL } from ".";
+import { ArticleDetail } from "../types";
 
-export const getArticleById = async (articleId: string) => {
+export const getArticleById = async (
+  articleId: string
+): Promise<ArticleDetail | undefined> => {
   try {
     const response = await fetch(`${BASE_URL}/data/article.json`, {
       method: "GET",
