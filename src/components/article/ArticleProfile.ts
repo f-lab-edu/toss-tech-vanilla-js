@@ -29,7 +29,7 @@ class ArticleProfile extends Component {
             border-radius: 156px;
             margin-right: 14px;
         }
-        .article-author-profile__contant p{
+        .article-author-profile__content p{
             margin: 0px;
             line-height: 1.5;
         }
@@ -56,7 +56,7 @@ class ArticleProfile extends Component {
           src='${profileImage}'
           alt='${name}_profile_image'
         />
-        <div class='article-author-profile__contant'>
+        <div class='article-author-profile__content'>
           <p class='article-author-profile__info'>
             <span>${name}</span>
             <span>ㆍ${position}</span>
