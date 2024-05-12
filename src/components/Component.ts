@@ -41,8 +41,8 @@ export default class Component extends HTMLElement {
     return "";
   }
 
-  createHTML(props: Props) {
-    return "";
+  createHTML(props: Props): HTMLElement {
+    return document.createElement("div");
   }
 
   render() {
