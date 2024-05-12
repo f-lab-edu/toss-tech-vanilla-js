@@ -62,14 +62,9 @@ class NotFoundPage extends Component {
     contentDescriptionElement.textContent = "This page could not be found.";
     notFoundPageContentElement.appendChild(contentDescriptionElement);
 
-    return `
-        <div class="not-found-page__container">
-            <div class="not-found-page__content">
-                <h1>404</h1>
-                <h2>This page could not be found.</h2>
-            </div>   
-        </div>
-    `;
+    notFoundPageContainerElement.appendChild(notFoundPageContentElement);
+
+    return notFoundPageContainerElement;
   }
 }
 
