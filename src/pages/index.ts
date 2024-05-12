@@ -6,16 +6,24 @@ export { default as NotFoundPage } from "./NotFoundPage";
 
 export default (container: HTMLElement) => {
   const main = () => {
-    container.innerHTML = `<${CUSTOM_ELEMENTS_NAME.MAIN_PAGE}></${CUSTOM_ELEMENTS_NAME.MAIN_PAGE}>`;
+    const mainPage = document.createElement(CUSTOM_ELEMENTS_NAME.MAIN_PAGE);
+    container.appendChild(mainPage);
   };
 
   const article = (params: { articleId: string }) => {
     const { articleId } = params;
-    container.innerHTML = `<${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE} articleId=${articleId}></${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE}>`;
+    const articleDetailPage = document.createElement(
+      CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE
+    );
+    articleDetailPage.setAttribute("article-id", articleId);
+    container.appendChild(articleDetailPage);
   };
 
   const notFound = () => {
-    container.innerHTML = `<${CUSTOM_ELEMENTS_NAME.NOT_FOUND_PAGE}></${CUSTOM_ELEMENTS_NAME.NOT_FOUND_PAGE}>`;
+    const notFoundPage = document.createElement(
+      CUSTOM_ELEMENTS_NAME.NOT_FOUND_PAGE
+    );
+    container.appendChild(notFoundPage);
   };
 
   return {
