@@ -1,11 +1,12 @@
-import { extractUrlParams } from "../../src/router";
-import createRouter from "../../src/router";
+import { createRouter, extractUrlParams } from "../../src/router";
+import { Router } from "../../src/types";
 
 describe("extractUrlParams function test", () => {
   test("returns an empty object if no params are specified", () => {
     const route = {
       params: [],
       testRegExp: /tech/,
+      callback: jest.fn(),
     };
     const pathname = "/tech";
     expect(extractUrlParams(route, pathname)).toEqual({});
@@ -15,6 +16,7 @@ describe("extractUrlParams function test", () => {
     const route = {
       params: ["articleId"],
       testRegExp: /article\/(.+)/,
+      callback: jest.fn(),
     };
     const pathname = "/article/react-native-2024";
     expect(extractUrlParams(route, pathname)).toEqual({
@@ -24,9 +26,9 @@ describe("extractUrlParams function test", () => {
 });
 
 describe("createRouter", () => {
-  let router;
-  let mockCallback;
-  let mockNotFoundCallback;
+  let router: Router;
+  let mockCallback: jest.Mock;
+  let mockNotFoundCallback: jest.Mock;
 
   beforeEach(() => {
     router = createRouter();
