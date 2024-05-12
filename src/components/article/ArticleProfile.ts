@@ -49,22 +49,38 @@ class ArticleProfile extends Component {
   }
 
   createHTML({ profileImage, name, position, date }: ArticleProfileProps) {
-    return `
-      <div class='article-author-profile'>
-        <img
-          class='article-author-profile__img'
-          src='${profileImage}'
-          alt='${name}_profile_image'
-        />
-        <div class='article-author-profile__content'>
-          <p class='article-author-profile__info'>
-            <span>${name}</span>
-            <span>ㆍ${position}</span>
-          </p>
-          <p class='article-author-profile__date'>${date}</p>
-        </div>
-      </div>
-    `;
+    const profileElement = document.createElement("div");
+    profileElement.classList.add("article-author-profile");
+
+    const profileImageElement = document.createElement("img");
+    profileImageElement.classList.add("article-author-profile__img");
+    profileImageElement.src = profileImage;
+    profileImageElement.alt = `${name}_profile_image`;
+    profileElement.appendChild(profileImageElement);
+
+    const profileContentElement = document.createElement("div");
+    profileContentElement.classList.add("article-author-profile__content");
+
+    const profileInfoElement = document.createElement("p");
+    profileInfoElement.classList.add("article-author-profile__info");
+
+    const nameElement = document.createElement("span");
+    nameElement.textContent = name;
+    profileInfoElement.appendChild(nameElement);
+
+    const positionElement = document.createElement("span");
+    positionElement.textContent = `ㆍ${position}`;
+    profileInfoElement.appendChild(positionElement);
+    profileContentElement.appendChild(profileInfoElement);
+
+    const dateElement = document.createElement("p");
+    dateElement.classList.add("article-author-profile__date");
+    dateElement.textContent = date;
+    profileContentElement.appendChild(dateElement);
+
+    profileElement.appendChild(profileContentElement);
+
+    return profileElement;
   }
 }
 
