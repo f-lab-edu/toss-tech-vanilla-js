@@ -46,10 +46,9 @@ export default class Component extends HTMLElement {
   }
 
   render() {
-    const html = this.createHTML(this.props);
     this.shadowRoot!.innerHTML = `
-        ${this.styles}
-        ${html}
-      `;
+      ${this.styles}
+      ${this.createHTML(this.props).outerHTML}
+    `;
   }
 }
