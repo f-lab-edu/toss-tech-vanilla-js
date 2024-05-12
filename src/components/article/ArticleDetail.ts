@@ -77,27 +77,39 @@ class ArticleDetail extends Component {
     date,
     content,
   }: Props) {
-    return `
-    <div>
-        <header class='article-header__container'>
-            <img
-                class='article-header__thumbnail'
-                srcset='${thumbnail}'
-                alt='${title}_thumbnail'
-            />
-            <h2 class='article-header__title'>${title}</h2>
-            <${CUSTOM_ELEMENTS_NAME.ARTICLE_PROFILE}
-                profileImage='${profileImage}'
-                name='${author}'
-                position='${position}'
-                date='${date}'
-            ></${CUSTOM_ELEMENTS_NAME.ARTICLE_PROFILE}>
-        </header>
-        <div class="article-body__container">
-            ${content}
-        </div>
-    </div> 
-    `;
+    const articleDetailElement = document.createElement("div");
+
+    const articleHeaderElement = document.createElement("header");
+    articleHeaderElement.className = "article-header__container";
+
+    const thumbnailElement = document.createElement("img");
+    thumbnailElement.className = "article-header__thumbnail";
+    thumbnailElement.srcset = thumbnail;
+    thumbnailElement.alt = `${title}_thumbnail`;
+    articleHeaderElement.appendChild(thumbnailElement);
+
+    const titleElement = document.createElement("h2");
+    titleElement.className = "article-header__title";
+    titleElement.textContent = title;
+    articleHeaderElement.appendChild(titleElement);
+
+    const profileElement = document.createElement(
+      CUSTOM_ELEMENTS_NAME.ARTICLE_PROFILE
+    );
+    profileElement.setAttribute("profileImage", profileImage);
+    profileElement.setAttribute("name", author);
+    profileElement.setAttribute("position", position);
+    profileElement.setAttribute("date", date);
+    articleHeaderElement.appendChild(profileElement);
+
+    const articleBodyElement = document.createElement("div");
+    articleBodyElement.className = "article-body__container";
+    articleBodyElement.innerHTML = content;
+
+    articleDetailElement.appendChild(articleHeaderElement);
+    articleDetailElement.appendChild(articleBodyElement);
+
+    return articleDetailElement;
   }
 }
 
