@@ -94,24 +94,39 @@ export default class ArticleListItem extends Component {
     date,
     thumbnail,
   }: ArticleListItemProps) {
-    return `
-      <a
-        class='article'
-        href='/article/${id}'
-        data-navigate='/article/${id}'
-      >
-        <img
-          class='article__thumbnail'
-          srcset='${thumbnail}'
-          alt='${title} 썸네일 이미지'
-        />
-        <div class='article__content'>
-          <h3 class="article__title">${title}</h3>
-          <p class="article__description">${description}</p>
-          <p class="article__date">${date}</p>
-        </div>
-      </a>
-    `;
+    const articleItemElement = document.createElement("a");
+    articleItemElement.classList.add("article");
+    articleItemElement.href = `/article/${id}`;
+    articleItemElement.dataset.navigate = `/article/${id}`;
+
+    const thumbnailElement = document.createElement("img");
+    thumbnailElement.classList.add("article__thumbnail");
+    thumbnailElement.srcset = thumbnail;
+    thumbnailElement.alt = `${title} 썸네일 이미지`;
+
+    const contentElement = document.createElement("div");
+    contentElement.classList.add("article__content");
+
+    const titleElement = document.createElement("h3");
+    titleElement.classList.add("article__title");
+    titleElement.textContent = title;
+
+    const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("article__description");
+    descriptionElement.textContent = description;
+
+    const dateElement = document.createElement("p");
+    dateElement.classList.add("article__date");
+    dateElement.textContent = date;
+
+    contentElement.appendChild(titleElement);
+    contentElement.appendChild(descriptionElement);
+    contentElement.appendChild(dateElement);
+
+    articleItemElement.appendChild(thumbnailElement);
+    articleItemElement.appendChild(contentElement);
+
+    return articleItemElement;
   }
 }
 
