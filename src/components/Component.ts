@@ -1,5 +1,5 @@
 const NAV_ANCHOR_SELECTOR = "a[data-navigate]";
-import createRouter from "../router";
+import { createRouter } from "../router";
 
 const router = createRouter();
 

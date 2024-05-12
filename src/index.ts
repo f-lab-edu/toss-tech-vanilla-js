@@ -1,5 +1,5 @@
 import "./components/entry";
-import createRouter from "./router";
+import { createRouter } from "./router";
 import createPages from "./pages";
 
 const app = document.querySelector("#app");
