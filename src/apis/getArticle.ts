@@ -1,6 +1,9 @@
-const BASE_URL = window.location.origin;
+import { BASE_URL } from ".";
+import { ArticleDetail } from "../types";
 
-export const getArticleById = async (articleId) => {
+export const getArticleById = async (
+  articleId: string
+): Promise<ArticleDetail | undefined> => {
   try {
     const response = await fetch(`${BASE_URL}/data/article.json`, {
       method: "GET",

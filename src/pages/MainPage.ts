@@ -1,5 +1,5 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
-import Component from "../components/Component.js";
+import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName";
+import Component from "../components/Component";
 
 class MainPage extends Component {
   constructor() {
@@ -23,12 +23,12 @@ class MainPage extends Component {
 
     return `
       <div class='main-page__container'>
-        <${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST} category="${currentPath}"></${CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST}>
+        <${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST} category="${currentPath}"></${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST}>
       </div>
     `;
   }
 }
 
-window.customElements.define(CUSMTOM_ELEMENTS_NAME.MAIN_PAGE, MainPage);
+window.customElements.define(CUSTOM_ELEMENTS_NAME.MAIN_PAGE, MainPage);
 
 export default MainPage;

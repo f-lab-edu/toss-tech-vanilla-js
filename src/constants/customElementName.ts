@@ -1,4 +1,4 @@
-export const CUSMTOM_ELEMENTS_NAME = {
+export const CUSTOM_ELEMENTS_NAME = {
   MAIN_PAGE: "main-page",
   ARTICLE_DETAIL_PAGE: "article-detail-page",
   NOT_FOUND_PAGE: "not-found-page",

@@ -1,5 +1,13 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
-import Component from "../Component.js";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
+import Component from "../Component";
+
+type ArticleListItemProps = {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  thumbnail: string;
+};
 
 export default class ArticleListItem extends Component {
   constructor() {
@@ -79,7 +87,13 @@ export default class ArticleListItem extends Component {
     `;
   }
 
-  createHTML({ id, title, description, date, thumbnail }) {
+  createHTML({
+    id,
+    title,
+    description,
+    date,
+    thumbnail,
+  }: ArticleListItemProps) {
     return `
       <a
         class='article'
@@ -102,6 +116,6 @@ export default class ArticleListItem extends Component {
 }
 
 window.customElements.define(
-  CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM,
+  CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM,
   ArticleListItem
 );

@@ -1,6 +1,7 @@
-import { getArticleListByCategory } from "../../apis/getArticleList.js";
-import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
-import Component from "../Component.js";
+import { getArticleListByCategory } from "../../apis/getArticleList";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
+import { Article, Category } from "../../types";
+import Component from "../Component";
 
 const CATEGORY = {
   tech: "개발",
@@ -8,15 +9,17 @@ const CATEGORY = {
 };
 
 class ArticleList extends Component {
+  private category: Category = "tech";
+
   constructor() {
     super(["category"]);
-    this.caregory = "";
+    this.category = "tech";
   }
 
   async connectedCallback() {
     const category = this.getAttribute("category");
-    this.category = category;
-    const articleList = await getArticleListByCategory(category);
+    this.category = category as Category;
+    const articleList = await getArticleListByCategory(this.category);
     this.props = articleList;
     this.render();
   }
@@ -44,7 +47,7 @@ class ArticleList extends Component {
     `;
   }
 
-  createHTML(articleList) {
+  createHTML(articleList: Article[]) {
     return `
       <section>
         <h3 class='article-list__title'>${CATEGORY[this.category]}</h3>
@@ -52,13 +55,13 @@ class ArticleList extends Component {
             ${articleList
               ?.map((article) => {
                 return `
-                    <article-list-item
+                    <${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM}
                         id='${article.id}'
                         thumbnail='${article.thumbnail}'
                         title='${article.title}'
                         description='${article.description}'
                         date='${article.date}'
-                    ></article-list-item>
+                    ></${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM}>
                     `;
               })
               .join("")}       
@@ -68,6 +71,6 @@ class ArticleList extends Component {
   }
 }
 
-window.customElements.define(CUSMTOM_ELEMENTS_NAME.ARTICLE_LIST, ArticleList);
+window.customElements.define(CUSTOM_ELEMENTS_NAME.ARTICLE_LIST, ArticleList);
 
 export default ArticleList;

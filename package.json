@@ -4,8 +4,9 @@
   "description": "프레임워크 없이 바닐라 자바스크립트로 만드는 토스테크 페이지",
   "main": "index.js",
   "scripts": {
-    "dev": "npx http-server ./src -c-1 -p 8001 -a localhost --proxy http://localhost:8001?",
-    "test": "jest"
+    "dev": "webpack serve --open",
+    "test": "jest",
+    "build": "webpack"
   },
   "license": "MIT",
   "dependencies": {
@@ -16,6 +17,11 @@
     "@babel/preset-env": "^7.24.5",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   }
 }

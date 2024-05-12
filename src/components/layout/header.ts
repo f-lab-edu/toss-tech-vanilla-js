@@ -1,5 +1,5 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../../constants/customElementName.js";
-import Component from "../Component.js";
+import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
+import Component from "../Component";
 
 export default class Header extends Component {
   constructor() {
@@ -83,8 +83,8 @@ export default class Header extends Component {
   }
 
   addCareerButtonEvent = () => {
-    const button = this.shadowRoot.querySelector("button");
-    button.addEventListener("click", () => {
+    const button = this.shadowRoot!.querySelector("button");
+    button?.addEventListener("click", () => {
       window.location.href = "https://toss.im/career/jobs";
     });
   };
@@ -109,4 +109,4 @@ export default class Header extends Component {
   }
 }
 
-window.customElements.define(CUSMTOM_ELEMENTS_NAME.APP_HEADER, Header);
+window.customElements.define(CUSTOM_ELEMENTS_NAME.APP_HEADER, Header);

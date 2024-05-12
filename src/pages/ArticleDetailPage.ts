@@ -1,6 +1,17 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
-import Component from "../components/Component.js";
-import { getArticleById } from "../apis/getArticle.js";
+import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName";
+import Component from "../components/Component";
+import { getArticleById } from "../apis/getArticle";
+import createRouter from "../router";
+
+type ArticleDetailPageProps = {
+  thumbnail: string;
+  title: string;
+  profile_image: string;
+  author: string;
+  position: string;
+  date: string;
+  content: string;
+};
 
 class ArticleDetailPage extends Component {
   constructor() {
@@ -8,7 +19,13 @@ class ArticleDetailPage extends Component {
   }
 
   async connectedCallback() {
+    const router = createRouter();
     const articleId = this.getAttribute("articleId");
+    if (!articleId) {
+      router.navigate("/404");
+      return;
+    }
+
     const article = await getArticleById(articleId);
     this.props = article;
 
@@ -30,11 +47,11 @@ class ArticleDetailPage extends Component {
     `;
   }
 
-  createHTML(article) {
+  createHTML(article: ArticleDetailPageProps) {
     return `
       <div class='article-detail-page__container'>
         <div class="article-detail__container">
-            <${CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL}
+            <${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL}
                 thumbnail="${article.thumbnail}"
                 title="${article.title}"
                 profileImage="${article.profile_image}"
@@ -42,7 +59,7 @@ class ArticleDetailPage extends Component {
                 position="${article.position}"
                 date="${article.date}"
                 content="${article.content}"
-            </${CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL}>
+            </${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL}>
         </div>
       </div>
     `;
@@ -50,7 +67,7 @@ class ArticleDetailPage extends Component {
 }
 
 window.customElements.define(
-  CUSMTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE,
+  CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE,
   ArticleDetailPage
 );
 

@@ -1,5 +1,5 @@
-import { CUSMTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
-import Component from "../components/Component.js";
+import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName";
+import Component from "../components/Component";
 
 class NotFoundPage extends Component {
   constructor() {
@@ -59,9 +59,6 @@ class NotFoundPage extends Component {
   }
 }
 
-window.customElements.define(
-  CUSMTOM_ELEMENTS_NAME.NOT_FOUND_PAGE,
-  NotFoundPage
-);
+window.customElements.define(CUSTOM_ELEMENTS_NAME.NOT_FOUND_PAGE, NotFoundPage);
 
 export default NotFoundPage;
