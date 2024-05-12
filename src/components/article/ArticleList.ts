@@ -48,26 +48,31 @@ class ArticleList extends Component {
   }
 
   createHTML(articleList: Article[]) {
-    return `
-      <section>
-        <h3 class='article-list__title'>${CATEGORY[this.category]}</h3>
-        <ul class='article-list__container'>
-            ${articleList
-              ?.map((article) => {
-                return `
-                    <${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM}
-                        id='${article.id}'
-                        thumbnail='${article.thumbnail}'
-                        title='${article.title}'
-                        description='${article.description}'
-                        date='${article.date}'
-                    ></${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM}>
-                    `;
-              })
-              .join("")}       
-        </ul>
-      </section>
-    `;
+    const articleItemSectionElement = document.createElement("section");
+
+    const articleListTitleElement = document.createElement("h3");
+    articleListTitleElement.classList.add("article-list__title");
+    articleListTitleElement.textContent = CATEGORY[this.category];
+    articleItemSectionElement.appendChild(articleListTitleElement);
+
+    const articleListContainerElement = document.createElement("ul");
+    articleListContainerElement.classList.add("article-list__container");
+
+    articleList?.forEach((article) => {
+      const articleListItemElement = document.createElement(
+        CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM
+      ) as any;
+      articleListItemElement.id = article.id;
+      articleListItemElement.thumbnail = article.thumbnail;
+      articleListItemElement.title = article.title;
+      articleListItemElement.description = article.description;
+      articleListItemElement.date = article.date;
+      articleListContainerElement.appendChild(articleListItemElement);
+    });
+
+    articleItemSectionElement.appendChild(articleListContainerElement);
+
+    return articleItemSectionElement;
   }
 }
 
