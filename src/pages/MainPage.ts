@@ -21,11 +21,17 @@ class MainPage extends Component {
   createHTML() {
     const currentPath = window.location.pathname.slice(1) || "tech";
 
-    return `
-      <div class='main-page__container'>
-        <${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST} category="${currentPath}"></${CUSTOM_ELEMENTS_NAME.ARTICLE_LIST}>
-      </div>
-    `;
+    const mainPageContainer = document.createElement("div");
+    mainPageContainer.className = "main-page__container";
+
+    const articleList = document.createElement(
+      CUSTOM_ELEMENTS_NAME.ARTICLE_LIST
+    );
+    articleList.setAttribute("category", currentPath);
+
+    mainPageContainer.appendChild(articleList);
+
+    return mainPageContainer;
   }
 }
 
