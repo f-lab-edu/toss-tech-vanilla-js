@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_NAME } from "../../constants/customElementName";
 import Component from "../Component";
 
-export default class Header extends Component {
+class Header extends Component {
   constructor() {
     super([]);
   }
@@ -90,23 +90,47 @@ export default class Header extends Component {
   };
 
   createHTML() {
-    return `
-      <header id="header">
-          <div class="header_container">
-              <a href="/tech" data-navigate="/tech">
-                  <img src="https://camo.githubusercontent.com/3172b26e07f1edaa6f9683644f56ab6672632ac80d77157b157cf97f02b49456/68747470733a2f2f692e696d6775722e636f6d2f63647a727772742e706e67" alt="logo" class="logo" />
-              </a>
-              <nav>
-                <div class="nav_list">
-                <a href="/design" data-navigate="/design" class="nav_item">디자인</a>
-                   <a href="/tech" data-navigate="/tech" class="nav_item">개발</a>
-                   <button>채용 바로가기</button>
-                </div>
-              </nav>
-          </div>
-      </header>
-    `;
+    const header = document.createElement("header");
+    header.id = "header";
+
+    const headerContainer = document.createElement("div");
+    headerContainer.className = "header_container";
+
+    const logo = document.createElement("img");
+    logo.src =
+      "https://camo.githubusercontent.com/3172b26e07f1edaa6f9683644f56ab6672632ac80d77157b157cf97f02b49456/68747470733a2f2f692e696d6775722e636f6d2f63647a727772742e706e67";
+    logo.alt = "logo";
+    logo.className = "logo";
+    headerContainer.appendChild(logo);
+
+    const nav = document.createElement("nav");
+    const navList = document.createElement("div");
+    navList.className = "nav_list";
+    nav.appendChild(navList);
+
+    const design = document.createElement("a");
+    design.href = "/design";
+    design.dataset.navigate = "/design";
+    design.className = "nav_item";
+    design.textContent = "디자인";
+    navList.appendChild(design);
+
+    const tech = document.createElement("a");
+    tech.href = "/tech";
+    tech.dataset.navigate = "/tech";
+    tech.className = "nav_item";
+    tech.textContent = "개발";
+    navList.appendChild(tech);
+
+    const button = document.createElement("button");
+    button.textContent = "채용 바로가기";
+    navList.appendChild(button);
+
+    header.appendChild(headerContainer);
+    return header;
   }
 }
 
 window.customElements.define(CUSTOM_ELEMENTS_NAME.APP_HEADER, Header);
+
+export default Header;
