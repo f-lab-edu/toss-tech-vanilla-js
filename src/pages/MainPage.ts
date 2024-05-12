@@ -1,5 +1,5 @@
-import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName.js";
-import Component from "../components/Component.js";
+import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName";
+import Component from "../components/Component";
 
 class MainPage extends Component {
   constructor() {
