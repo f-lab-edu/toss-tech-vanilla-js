@@ -48,21 +48,31 @@ class ArticleDetailPage extends Component {
   }
 
   createHTML(article: ArticleDetailPageProps) {
-    return `
-      <div class='article-detail-page__container'>
-        <div class="article-detail__container">
-            <${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL}
-                thumbnail="${article.thumbnail}"
-                title="${article.title}"
-                profileImage="${article.profile_image}"
-                author="${article.author}"
-                position="${article.position}"
-                date="${article.date}"
-                content="${article.content}"
-            </${CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL}>
-        </div>
-      </div>
-    `;
+    const articleDetailPageContainerElement = document.createElement("div");
+    articleDetailPageContainerElement.classList.add(
+      "article-detail-page__container"
+    );
+
+    const articleDetailContainerElement = document.createElement("div");
+    articleDetailContainerElement.classList.add("article-detail__container");
+
+    const articleDetailElement = document.createElement(
+      CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL
+    );
+    articleDetailElement.setAttribute("thumbnail", article.thumbnail);
+    articleDetailElement.setAttribute("title", article.title);
+    articleDetailElement.setAttribute("profileImage", article.profile_image);
+    articleDetailElement.setAttribute("author", article.author);
+    articleDetailElement.setAttribute("position", article.position);
+    articleDetailElement.setAttribute("date", article.date);
+    articleDetailElement.setAttribute("content", article.content);
+
+    articleDetailContainerElement.appendChild(articleDetailElement);
+    articleDetailPageContainerElement.appendChild(
+      articleDetailContainerElement
+    );
+
+    return articleDetailPageContainerElement;
   }
 }
 

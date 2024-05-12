@@ -48,6 +48,20 @@ class NotFoundPage extends Component {
   }
 
   createHTML() {
+    const notFoundPageContainerElement = document.createElement("div");
+    notFoundPageContainerElement.classList.add("not-found-page__container");
+
+    const notFoundPageContentElement = document.createElement("div");
+    notFoundPageContentElement.classList.add("not-found-page__content");
+
+    const contenStatusElement = document.createElement("h1");
+    contenStatusElement.textContent = "404";
+    notFoundPageContentElement.appendChild(contenStatusElement);
+
+    const contentDescriptionElement = document.createElement("h2");
+    contentDescriptionElement.textContent = "This page could not be found.";
+    notFoundPageContentElement.appendChild(contentDescriptionElement);
+
     return `
         <div class="not-found-page__container">
             <div class="not-found-page__content">
