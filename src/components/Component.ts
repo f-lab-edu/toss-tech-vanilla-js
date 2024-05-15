@@ -1,5 +1,5 @@
 const NAV_ANCHOR_SELECTOR = "a[data-navigate]";
-import createRouter from "../router";
+import { createRouter } from "../router";
 
 const router = createRouter();
 
@@ -46,10 +46,9 @@ export default class Component extends HTMLElement {
   }
 
   render() {
-    const html = this.createHTML(this.props);
     this.shadowRoot!.innerHTML = `
-        ${this.styles}
-        ${html}
-      `;
+      ${this.styles}
+      ${this.createHTML(this.props).outerHTML}
+    `;
   }
 }

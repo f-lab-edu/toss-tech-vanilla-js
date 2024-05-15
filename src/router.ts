@@ -15,7 +15,7 @@ const router: Router = {
   start: () => {},
 };
 
-const extractUrlParams = (route: Route, pathname: string) => {
+export const extractUrlParams = (route: Route, pathname: string) => {
   const params: Params = {};
 
   if (route.params.length === 0) {
@@ -91,6 +91,4 @@ router.start = () => {
   window.setInterval(checkRoutes, TICKTIME);
 };
 
-const createRouter = () => router;
-
-export default createRouter;
+export const createRouter = () => router;
