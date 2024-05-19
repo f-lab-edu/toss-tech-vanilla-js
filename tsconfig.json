@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "target": "es6",
     "module": "commonjs",
-    "strict": true,
+    "lib": ["dom", "es6"],
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "outDir": "./dist"
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*", "./src/**/*.css", "./src/**/*.html"]
 }
