@@ -3,6 +3,8 @@ import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName";
 export { default as MainPage } from "./MainPage";
 export { default as ArticleDetailPage } from "./ArticleDetailPage";
 export { default as NotFoundPage } from "./NotFoundPage";
+import "../styles/global.css";
+import "../styles/reset.css";
 
 export default (container: HTMLElement) => {
   const main = () => {
