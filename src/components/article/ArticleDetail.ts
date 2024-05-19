@@ -35,6 +35,9 @@ class ArticleDetail extends Component {
         .article-header__thumbnail {
             width: 100%;
             margin-top: 36px;
+            min-height: 340px;
+            background-color: #f5f5f5;
+            object-fit: cover;
             border-radius: 12px;
         }
         .article-header__title {
