@@ -7,7 +7,7 @@ export { default as NotFoundPage } from "./NotFoundPage";
 export default (container: HTMLElement) => {
   const main = () => {
     const mainPage = document.createElement(CUSTOM_ELEMENTS_NAME.MAIN_PAGE);
-    container.appendChild(mainPage);
+    container.replaceChildren(mainPage);
   };
 
   const article = (params: { articleId: string }) => {
@@ -15,15 +15,15 @@ export default (container: HTMLElement) => {
     const articleDetailPage = document.createElement(
       CUSTOM_ELEMENTS_NAME.ARTICLE_DETAIL_PAGE
     );
-    articleDetailPage.setAttribute("article-id", articleId);
-    container.appendChild(articleDetailPage);
+    articleDetailPage.setAttribute("articleId", articleId);
+    container.replaceChildren(articleDetailPage);
   };
 
   const notFound = () => {
     const notFoundPage = document.createElement(
       CUSTOM_ELEMENTS_NAME.NOT_FOUND_PAGE
     );
-    container.appendChild(notFoundPage);
+    container.replaceChildren(notFoundPage);
   };
 
   return {
