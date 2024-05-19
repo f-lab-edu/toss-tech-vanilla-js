@@ -65,7 +65,7 @@ class ArticleList extends Component {
     this.articleList?.forEach((article) => {
       const articleListItemElement = document.createElement(
         CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM
-      ) as any;
+      );
       articleListItemElement.setAttribute("id", article.id);
       articleListItemElement.setAttribute("title", article.title);
       articleListItemElement.setAttribute("description", article.description);
