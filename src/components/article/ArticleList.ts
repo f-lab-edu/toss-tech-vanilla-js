@@ -62,11 +62,11 @@ class ArticleList extends Component {
       const articleListItemElement = document.createElement(
         CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM
       ) as any;
-      articleListItemElement.id = article.id;
-      articleListItemElement.thumbnail = article.thumbnail;
-      articleListItemElement.title = article.title;
-      articleListItemElement.description = article.description;
-      articleListItemElement.date = article.date;
+      articleListItemElement.setAttribute("id", article.id);
+      articleListItemElement.setAttribute("title", article.title);
+      articleListItemElement.setAttribute("description", article.description);
+      articleListItemElement.setAttribute("date", article.date);
+      articleListItemElement.setAttribute("thumbnail", article.thumbnail);
       articleListContainerElement.appendChild(articleListItemElement);
     });
 
