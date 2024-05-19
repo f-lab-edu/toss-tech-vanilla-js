@@ -10,6 +10,7 @@ const CATEGORY = {
 
 class ArticleList extends Component {
   private category: Category = "tech";
+  private articleList: Article[] = [];
 
   constructor() {
     super(["category"]);
@@ -20,7 +21,10 @@ class ArticleList extends Component {
     const category = this.getAttribute("category");
     this.category = category as Category;
     const articleList = await getArticleListByCategory(this.category);
-    this.props = articleList;
+    if (!articleList) {
+      throw new Error("Article list is empty");
+    }
+    this.articleList = articleList;
     this.render();
   }
 
@@ -47,7 +51,7 @@ class ArticleList extends Component {
     `;
   }
 
-  createHTML(articleList: Article[]) {
+  createHTML() {
     const articleItemSectionElement = document.createElement("section");
 
     const articleListTitleElement = document.createElement("h3");
@@ -58,7 +62,7 @@ class ArticleList extends Component {
     const articleListContainerElement = document.createElement("ul");
     articleListContainerElement.classList.add("article-list__container");
 
-    articleList?.forEach((article) => {
+    this.articleList?.forEach((article) => {
       const articleListItemElement = document.createElement(
         CUSTOM_ELEMENTS_NAME.ARTICLE_LIST_ITEM
       ) as any;
