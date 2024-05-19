@@ -1,19 +1,8 @@
-import { BASE_URL } from ".";
-import { ArticleDetail } from "../types";
+import articles from "../data/article.json";
 
-export const getArticleById = async (
-  articleId: string
-): Promise<ArticleDetail | undefined> => {
+export const getArticleById = async (articleId: string) => {
   try {
-    const response = await fetch(`${BASE_URL}/data/article.json`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    const data = await response.json();
-    return data[articleId];
+    return articles[articleId];
   } catch (error) {
     console.error(error);
   }
