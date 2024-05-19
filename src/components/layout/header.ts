@@ -104,6 +104,8 @@ class Header extends Component {
     headerContainer.appendChild(logo);
 
     const nav = document.createElement("nav");
+    headerContainer.appendChild(nav);
+
     const navList = document.createElement("div");
     navList.className = "nav_list";
     nav.appendChild(navList);
