@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_NAME } from "../constants/customElementName";
 import Component from "../components/Component";
 import { getArticleById } from "../apis/getArticle";
-import createRouter from "../router";
+import { createRouter } from "../router";
 
 type ArticleDetailPageProps = {
   thumbnail: string;

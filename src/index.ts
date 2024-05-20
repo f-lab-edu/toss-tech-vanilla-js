@@ -1,5 +1,5 @@
 import "./components/entry";
-import createRouter from "./router";
+import { createRouter } from "./router";
 import createPages from "./pages";
 import { CUSTOM_ELEMENTS_NAME } from "./constants/customElementName";
 
