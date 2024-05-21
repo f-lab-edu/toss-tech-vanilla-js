@@ -96,14 +96,21 @@ class Header extends Component {
     const headerContainer = document.createElement("div");
     headerContainer.className = "header_container";
 
+    const logoContainer = document.createElement("a");
+    logoContainer.href = "/tech";
+    logoContainer.dataset.navigate = "/tech";
+    headerContainer.appendChild(logoContainer);
+
     const logo = document.createElement("img");
     logo.src =
       "https://camo.githubusercontent.com/3172b26e07f1edaa6f9683644f56ab6672632ac80d77157b157cf97f02b49456/68747470733a2f2f692e696d6775722e636f6d2f63647a727772742e706e67";
     logo.alt = "logo";
     logo.className = "logo";
-    headerContainer.appendChild(logo);
+    logoContainer.appendChild(logo);
 
     const nav = document.createElement("nav");
+    headerContainer.appendChild(nav);
+
     const navList = document.createElement("div");
     navList.className = "nav_list";
     nav.appendChild(navList);

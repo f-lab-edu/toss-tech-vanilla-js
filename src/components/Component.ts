@@ -3,7 +3,7 @@ import { createRouter } from "../router";
 
 const router = createRouter();
 
-type Props = any;
+type Props = Record<string, unknown>;
 
 export default class Component extends HTMLElement {
   public props: Props;
@@ -47,8 +47,8 @@ export default class Component extends HTMLElement {
 
   render() {
     this.shadowRoot!.innerHTML = `
-      ${this.styles}
-      ${this.createHTML(this.props).outerHTML}
-    `;
+        ${this.styles}
+        ${this.createHTML(this.props).outerHTML}
+      `;
   }
 }
